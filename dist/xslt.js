@@ -434,6 +434,9 @@
       }
       return outStr;
     };
+    $xslt.strToDoc = function(str) {
+      return strToDoc(str);
+    }
     return $xslt;
   });
 
