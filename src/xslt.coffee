@@ -86,6 +86,7 @@
 
 
   strToDoc = (str) ->
+    return str if (str instanceof 'XMLDocument')
     return null if (typeof str != 'string') or !isXml(str)
     str = prependHeader(str) if needsHeader(str)
 
