@@ -130,6 +130,9 @@
     };
     strToDoc = function(str) {
       var d, ref, ref1, ref2, ref3;
+      if (str instanceof 'XMLDocument') {
+        return str;
+      }
       if ((typeof str !== 'string') || !isXml(str)) {
         return null;
       }
