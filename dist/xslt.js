@@ -73,7 +73,7 @@
     getHeaderStandalone = function(str) {
       return getAttrVal(getHeader(str), 'standalone');
     };
-    activeXSupported = (typeof ActiveXObject !== "undefined" && ActiveXObject !== null) || 'ActiveXObject' in root;
+    activeXSupported = (typeof ActiveXObject !== "undefined" && ActiveXObject !== null) || 'ActiveXObject' in window;
     tryCreateActiveX = function() {
       var i, id, len, objIds;
       objIds = 1 <= arguments.length ? slice.call(arguments, 0) : [];
@@ -130,7 +130,7 @@
     };
     strToDoc = function(str) {
       var d, ref, ref1, ref2, ref3;
-      if (str instanceof XMLDocument) {
+      if (typeof str === 'object') {
         return str;
       }
       if ((typeof str !== 'string') || !isXml(str)) {
